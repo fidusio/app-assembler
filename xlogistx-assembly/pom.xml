@@ -54,11 +54,11 @@
             <artifactId>xlogistx-opsec</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.xlogistx</groupId>
-            <artifactId>xlogistx-http-ws</artifactId>
-            <version>${xlogistx.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.xlogistx</groupId>-->
+<!--            <artifactId>xlogistx-http-ws</artifactId>-->
+<!--            <version>${xlogistx.version}</version>-->
+<!--        </dependency>-->
 
 
 
@@ -86,7 +86,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.http.ws.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.http.Main</mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>
