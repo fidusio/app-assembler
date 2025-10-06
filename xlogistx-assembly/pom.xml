@@ -54,6 +54,17 @@
             <artifactId>xlogistx-opsec</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.zoxweb</groupId>
+            <artifactId>mongo-sync</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zoxweb</groupId>
+            <artifactId>common-datastore</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>io.xlogistx</groupId>-->
 <!--            <artifactId>xlogistx-http-ws</artifactId>-->
@@ -86,7 +97,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.http.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.app.Main</mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>

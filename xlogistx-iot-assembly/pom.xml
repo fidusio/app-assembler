@@ -38,7 +38,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.iot.app.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.app.Main</mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>
