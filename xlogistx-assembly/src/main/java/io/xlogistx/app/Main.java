@@ -3,7 +3,6 @@ package io.xlogistx.app;
 
 import io.xlogistx.http.NIOHTTPServer;
 import io.xlogistx.http.NIOHTTPServerCreator;
-import org.zoxweb.datastore.common.DataStores;
 import org.zoxweb.server.ds.mongo.sync.SyncMongoDS;
 import org.zoxweb.server.io.IOUtil;
 import org.zoxweb.server.logging.LogWrapper;
@@ -14,6 +13,7 @@ import org.zoxweb.server.task.TaskUtil;
 import org.zoxweb.server.util.GSONUtil;
 import org.zoxweb.shared.api.APIConfigInfo;
 import org.zoxweb.shared.api.APIConfigInfoDAO;
+import org.zoxweb.shared.api.APIRegistrar;
 import org.zoxweb.shared.data.ConfigDAO;
 import org.zoxweb.shared.http.HTTPServerConfig;
 import org.zoxweb.shared.security.IPBlockerConfig;
@@ -35,7 +35,6 @@ public class Main {
         NI_CONFIG(NIOConfig.RESOURCE_NAME),
         IP_BLOCKER(IPBlockerListener.RESOURCE_NAME),
         DS_CONFIG("DataStore")
-//        DB_CONFIG()
         ;
         private final String name;
         private Object val;
@@ -117,8 +116,7 @@ public class Main {
                             APIConfigInfo dataStoreConfig = GSONUtil.fromJSON(IOUtil.inputStreamToString(file), APIConfigInfoDAO.class);
                             SyncMongoDS dataStore = new SyncMongoDS();
                             dataStore.setAPIConfigInfo(dataStoreConfig);
-                            DataStores.SINGLETON.register(dataStore, true);
-
+                            APIRegistrar.SINGLETON.setDefault(dataStore);
                             break;
                     }
                 }
@@ -144,7 +142,7 @@ public class Main {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("usage: [" + Param.WS.getName() + "=wsonfig.json] [" + Param.NI_CONFIG.getName() + "=niconfig.json] [" + Param.IP_BLOCKER.getName() + "=ipbconfig.json]");
+            System.err.println("usage: [" + Param.WS.getName() + "=wsonfig.json] [" + Param.NI_CONFIG.getName() + "=niconfig.json] [" + Param.IP_BLOCKER.getName() + "=ipbconfig.json]" + " [" + Param.DS_CONFIG.getName() + "=dsconfig.json]");
             System.exit(-1);
         }
     }

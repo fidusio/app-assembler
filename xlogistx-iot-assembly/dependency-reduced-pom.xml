@@ -22,7 +22,7 @@
               <finalName>xlogistx-iot</finalName>
               <transformers>
                 <transformer>
-                  <mainClass>io.xlogistx.iot.app.Main</mainClass>
+                  <mainClass>io.xlogistx.app.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
