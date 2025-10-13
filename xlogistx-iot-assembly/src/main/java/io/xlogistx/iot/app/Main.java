@@ -1,4 +1,4 @@
-package io.xlogistx.app;
+package io.xlogistx.iot.app;
 
 import io.xlogistx.common.cron.CronConfig;
 import io.xlogistx.common.cron.CronSchedulerConfig;
