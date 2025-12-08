@@ -142,7 +142,7 @@ public class Main {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("usage: [" + Param.WS.getName() + "=wsonfig.json] [" + Param.NI_CONFIG.getName() + "=niconfig.json] [" + Param.IP_BLOCKER.getName() + "=ipbconfig.json]" + " [" + Param.DS_CONFIG.getName() + "=dsconfig.json]");
+            System.err.println("usage: [" + Param.WS.getName() + "=wsconfig.json] [" + Param.NI_CONFIG.getName() + "=niconfig.json] [" + Param.IP_BLOCKER.getName() + "=ipbconfig.json]" + " [" + Param.DS_CONFIG.getName() + "=dsconfig.json]");
             System.exit(-1);
         }
     }

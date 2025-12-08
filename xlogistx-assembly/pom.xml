@@ -7,14 +7,15 @@
         <artifactId>xlogistx</artifactId>
         <groupId>io.xlogistx</groupId>
         <version>1.0.0</version>
+        <relativePath/>
     </parent>
 
     <artifactId>xlogistx-assembly</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>8</maven.compiler.source>-->
+<!--        <maven.compiler.target>8</maven.compiler.target>-->
+<!--    </properties>-->
 
     <dependencies>
         <dependency>
@@ -65,13 +66,6 @@
             <artifactId>common-datastore</artifactId>
             <version>1.0.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.xlogistx</groupId>-->
-<!--            <artifactId>xlogistx-http-ws</artifactId>-->
-<!--            <version>${xlogistx.version}</version>-->
-<!--        </dependency>-->
-
-
 
 
     </dependencies>
@@ -82,7 +76,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <executions>
                     <execution>
 

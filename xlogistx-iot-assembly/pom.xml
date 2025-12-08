@@ -6,6 +6,7 @@
         <artifactId>xlogistx-iot</artifactId>
         <groupId>io.xlogistx</groupId>
         <version>1.0.0</version>
+        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,10 +14,6 @@
     <artifactId>xlogistx-iot-assembly</artifactId>
 
 
-    <properties>
-        <default-version>1.0.0</default-version>
-        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
-    </properties>
     <build>
         <finalName>xlogistx-iot-fat</finalName>
         <plugins>
@@ -38,7 +35,8 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.iot.app.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.iot.app.Main
+                                    </mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>
@@ -52,6 +50,7 @@
         <dependency>
             <groupId>org.zoxweb</groupId>
             <artifactId>zoxweb-core</artifactId>
+            <version>${zoxweb-core.version}</version>
         </dependency>
 
         <dependency>
@@ -65,39 +64,34 @@
             <artifactId>jsoup</artifactId>
             <version>${jsoup.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-http</artifactId>
             <version>${xlogistx.version}</version>
-
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.xlogistx</groupId>-->
-<!--            <artifactId>xlogistx-common</artifactId>-->
-<!--            <version>${xlogistx.version}</version>-->
 
-<!--        </dependency>-->
 
         <dependency>
             <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-iot-gpio</artifactId>
-            <version>${default-version}</version>
+            <version>${xlogistx-iot.version}</version>
 
         </dependency>
         <dependency>
             <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-iot-devices</artifactId>
-            <version>${default-version}</version>
+            <version>${xlogistx-iot.version}</version>
         </dependency>
         <dependency>
             <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-iot-usb</artifactId>
-            <version>${default-version}</version>
+            <version>${xlogistx-iot.version}</version>
         </dependency>
         <dependency>
             <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-iot-net</artifactId>
-            <version>${default-version}</version>
+            <version>${xlogistx-iot.version}</version>
         </dependency>
 
 

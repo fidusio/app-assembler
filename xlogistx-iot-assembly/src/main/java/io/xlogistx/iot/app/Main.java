@@ -19,7 +19,7 @@ import org.zoxweb.shared.util.ParamUtil;
 import java.io.File;
 
 public class Main {
-    private final static LogWrapper log = new LogWrapper(Main.class);
+    public final static LogWrapper log = new LogWrapper(Main.class);
 
     public static void main(String... args) {
         try {
