@@ -79,7 +79,7 @@
 <!--        </dependency>-->
         <dependency>
             <groupId>io.xlogistx</groupId>
-            <artifactId>xlogistx-iot-ngpio</artifactId>
+            <artifactId>xlogistx-iot-64-gpio</artifactId>
             <version>${xlogistx-iot.version}</version>
         </dependency>
         <dependency>

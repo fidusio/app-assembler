@@ -5,9 +5,9 @@ import io.xlogistx.common.cron.CronSchedulerConfig;
 import io.xlogistx.common.cron.CronTask;
 import io.xlogistx.common.cron.CronTool;
 import io.xlogistx.http.NIOHTTPServerCreator;
-import io.xlogistx.iot.ngpio.NGPIOFlowProcessor;
-import io.xlogistx.iot.ngpio.NPinStateMonitorConfig;
-import io.xlogistx.iot.ngpio.i2c.NI2CUtil;
+import io.xlogistx.iot.gpio64.GPIO64FlowProcessor;
+import io.xlogistx.iot.gpio64.PinState64MonitorConfig;
+import io.xlogistx.iot.gpio64.i2c.I2C64Util;
 import io.xlogistx.iot.net.SunriseSunsetScheduler;
 import org.zoxweb.server.io.IOUtil;
 import org.zoxweb.server.logging.LogWrapper;
@@ -44,8 +44,8 @@ public class Main {
                 File file = IOUtil.locateFile(flowConfig);
                 String jsonFC = IOUtil.inputStreamToString(file);
                 log.getLogger().info(jsonFC);
-                NPinStateMonitorConfig pinStateMonitorConfig = GSONUtil.fromJSONDefault(jsonFC, NPinStateMonitorConfig.class);
-                new NGPIOFlowProcessor(pinStateMonitorConfig, TaskUtil.defaultTaskScheduler()).init();
+                PinState64MonitorConfig pinStateMonitorConfig = GSONUtil.fromJSONDefault(jsonFC, PinState64MonitorConfig.class);
+                new GPIO64FlowProcessor(pinStateMonitorConfig, TaskUtil.defaultTaskScheduler()).init();
             }
             if (cronConfig != null) {
 
@@ -68,7 +68,7 @@ public class Main {
                 });
             }
             if (i2cCommand != null) {
-                NI2CUtil.exec(params);
+                I2C64Util.exec(params);
             }
 
             if (wsConfig == null && flowConfig == null && cronConfig == null && i2cCommand == null)
@@ -83,7 +83,7 @@ public class Main {
     private static void error(Exception e) {
         e.printStackTrace();
         System.err.println("command: [-wsc web-server-config.json] [-fc flow-config.json] [-cc cron_config.json] [-i2c [command] [command-params....]");
-        NI2CUtil.error("-i2c");
+        I2C64Util.error("-i2c");
         System.exit(-1);
     }
 }
