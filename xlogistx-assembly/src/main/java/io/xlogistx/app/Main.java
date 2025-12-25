@@ -17,10 +17,7 @@ import org.zoxweb.shared.api.APIRegistrar;
 import org.zoxweb.shared.data.ConfigDAO;
 import org.zoxweb.shared.http.HTTPServerConfig;
 import org.zoxweb.shared.security.IPBlockerConfig;
-import org.zoxweb.shared.util.GetNameValue;
-import org.zoxweb.shared.util.SetNameValue;
-import org.zoxweb.shared.util.SharedStringUtil;
-import org.zoxweb.shared.util.SharedUtil;
+import org.zoxweb.shared.util.*;
 
 import java.io.File;
 import java.util.List;
@@ -67,6 +64,7 @@ public class Main {
     public static void main(String... args) {
         try {
 
+            long ts  = System.currentTimeMillis();
             List<GetNameValue<String>> parameters = SharedStringUtil.parseStrings('=', args);
             NIOHTTPServer ws;
             NIOSocket nioSocket = null;
@@ -139,6 +137,7 @@ public class Main {
 
             log.getLogger().info("App Started:" + message);
             log.getLogger().info("We have one NIOSocket " + (nioConfig.getNIOSocket() == httpServerCreator.getNIOSocket()));
+            log.getLogger().info("Services  took " + Const.TimeInMillis.toString(System.currentTimeMillis() - ts) + " to start");
 
         } catch (Exception e) {
             e.printStackTrace();

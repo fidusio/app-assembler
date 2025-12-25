@@ -14,6 +14,7 @@ import org.zoxweb.server.logging.LogWrapper;
 import org.zoxweb.server.task.TaskUtil;
 import org.zoxweb.server.util.GSONUtil;
 import org.zoxweb.shared.http.HTTPServerConfig;
+import org.zoxweb.shared.util.Const;
 import org.zoxweb.shared.util.ParamUtil;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class Main {
 
     public static void main(String... args) {
         try {
-
+            long ts = System.currentTimeMillis();
             ParamUtil.ParamMap params = ParamUtil.parse("-", args);
             String wsConfig = params.stringValue("-wsc", true);
             String flowConfig = params.stringValue("-fc", true);
@@ -73,6 +74,7 @@ public class Main {
 
             if (wsConfig == null && flowConfig == null && cronConfig == null && i2cCommand == null)
                 throw new IllegalArgumentException("No config found");
+            log.getLogger().info("Services  took " + Const.TimeInMillis.toString(System.currentTimeMillis() - ts) + " to start");
 
         } catch (Exception e) {
             error(e);
