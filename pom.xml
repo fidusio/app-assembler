@@ -13,7 +13,7 @@
 
 
     <modules>
-        <module>xlogistx-iot-assembly</module>
+        <module>xlogistx-iot-32-assembly</module>
         <module>xlogistx-iot-64-assembly</module>
         <module>xlogistx-assembly</module>
     </modules>

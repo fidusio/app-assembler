@@ -1,3 +1,4 @@
+
 package io.xlogistx.iot.app;
 
 import io.xlogistx.common.cron.CronConfig;
@@ -5,9 +6,9 @@ import io.xlogistx.common.cron.CronSchedulerConfig;
 import io.xlogistx.common.cron.CronTask;
 import io.xlogistx.common.cron.CronTool;
 import io.xlogistx.http.NIOHTTPServerCreator;
-import io.xlogistx.iot.gpio.GPIOFlowProcessor;
-import io.xlogistx.iot.gpio.PinStateMonitorConfig;
-import io.xlogistx.iot.gpio.i2c.I2CUtil;
+import io.xlogistx.iot.gpio32.GPIOFlowProcessor;
+import io.xlogistx.iot.gpio32.PinStateMonitorConfig;
+import io.xlogistx.iot.gpio32.i2c.I2CUtil;
 import io.xlogistx.iot.net.SunriseSunsetScheduler;
 import org.zoxweb.server.io.IOUtil;
 import org.zoxweb.server.logging.LogWrapper;

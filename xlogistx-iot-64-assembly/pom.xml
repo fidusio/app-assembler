@@ -12,7 +12,9 @@
 
 
     <artifactId>xlogistx-iot-64-assembly</artifactId>
-
+    <properties>
+        <jdk.version>25</jdk.version>
+    </properties>
 
     <build>
         <finalName>xlogistx-iot-64-fat</finalName>
