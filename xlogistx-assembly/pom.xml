@@ -51,6 +51,11 @@
             <artifactId>xlogistx-opsec</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.xlogistx</groupId>
+            <artifactId>no-sneak</artifactId>
+            <version>${xlogistx.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.zoxweb</groupId>
