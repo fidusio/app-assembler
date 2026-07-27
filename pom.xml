@@ -17,6 +17,7 @@
         <module>xlogistx-iot-64-assembly</module>
         <module>xlogistx-assembly</module>
         <module>xlogistx-25-assembly</module>
+        <module>no-sneak-assembly</module>
     </modules>
 
 </project>

@@ -1,17 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
-        <artifactId>xlogistx</artifactId>
         <groupId>io.xlogistx</groupId>
+        <artifactId>no-sneak</artifactId>
         <version>1.0.0</version>
         <relativePath/>
     </parent>
 
-    <artifactId>xlogistx-assembly</artifactId>
+    <artifactId>no-sneak-assembly</artifactId>
 
+    <properties>
+        <jdk.veraion>25</jdk.veraion>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -43,6 +46,11 @@
         </dependency>
         <dependency>
             <groupId>io.xlogistx</groupId>
+            <artifactId>ffm</artifactId>
+            <version>${xlogistx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.xlogistx</groupId>
             <artifactId>xlogistx-core</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
@@ -51,12 +59,23 @@
             <artifactId>xlogistx-opsec</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.xlogistx</groupId>
+            <artifactId>no-sneak-app</artifactId>
+            <version>${no-sneak.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>io.xlogistx</groupId>
-            <artifactId>no-sneak-core</artifactId>
-            <version>${xlogistx.version}</version>
+            <artifactId>no-sneak-net</artifactId>
+            <version>${no-sneak.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.xlogistx</groupId>
+            <artifactId>no-sneak-core</artifactId>
+            <version>${no-sneak.version}</version>
+        </dependency>
+
 
 
         <dependency>
@@ -74,7 +93,7 @@
     </dependencies>
 
     <build>
-        <finalName>xlogistx-fat</finalName>
+        <finalName>no-sneak-fat</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -94,7 +113,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.app.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.nosneak.app.Main</mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>
