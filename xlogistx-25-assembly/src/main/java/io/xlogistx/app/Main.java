@@ -65,7 +65,7 @@ public class Main {
         try {
 
             long ts  = System.currentTimeMillis();
-            List<GetNameValue<String>> parameters = SharedStringUtil.parseStrings('=', args);
+            List<GetNameValue<String>> parameters = SUS.parseStrings('=', args);
             NIOHTTPServer ws;
             NIOSocket nioSocket = null;
             IPBlockerListener ipBlocker;
@@ -77,7 +77,7 @@ public class Main {
             }
 
             for (GetNameValue<String> gnvs : parameters) {
-                Param p = SharedUtil.lookupEnum(gnvs.getName(), Param.values());
+                Param p = SUS.lookupEnum(gnvs.getName(), Param.values());
                 if (p != null) {
                     File file;
                     switch (p) {
