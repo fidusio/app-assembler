@@ -12,9 +12,9 @@ import org.zoxweb.server.net.security.IPBlockerListener;
 import org.zoxweb.server.task.TaskUtil;
 import org.zoxweb.server.util.GSONUtil;
 import org.zoxweb.shared.api.APIConfigInfo;
-import org.zoxweb.shared.api.APIConfigInfoDAO;
+import org.zoxweb.shared.api.APIConfigInfoImpl;
 import org.zoxweb.shared.api.APIRegistrar;
-import org.zoxweb.shared.data.ConfigDAO;
+import org.zoxweb.shared.data.GenConfig;
 import org.zoxweb.shared.http.HTTPServerConfig;
 import org.zoxweb.shared.security.IPBlockerConfig;
 import org.zoxweb.shared.util.*;
@@ -94,7 +94,7 @@ public class Main {
                             break;
                         case NI_CONFIG:
                             file = IOUtil.locateFile(gnvs.getValue());
-                            ConfigDAO configDAO = GSONUtil.fromJSON(IOUtil.inputStreamToString(file));
+                            GenConfig configDAO = GSONUtil.fromJSON(IOUtil.inputStreamToString(file), GenConfig.class);
                             if (log.isEnabled()) log.getLogger().info(GSONUtil.toJSON(configDAO, true, false, false));
                             nioConfig.setAppConfig(configDAO).setNIOSocket(nioSocket);
                             nioSocket = nioConfig.createApp();
@@ -111,7 +111,7 @@ public class Main {
                             break;
                         case DS_CONFIG:
                             file = IOUtil.locateFile(gnvs.getValue());
-                            APIConfigInfo dataStoreConfig = GSONUtil.fromJSON(IOUtil.inputStreamToString(file), APIConfigInfoDAO.class);
+                            APIConfigInfo dataStoreConfig = GSONUtil.fromJSON(IOUtil.inputStreamToString(file), APIConfigInfoImpl.class);
                             SyncMongoDS dataStore = new SyncMongoDS();
                             dataStore.setAPIConfigInfo(dataStoreConfig);
                             APIRegistrar.SINGLETON.setDefault(dataStore);
