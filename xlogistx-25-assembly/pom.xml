@@ -75,6 +75,12 @@
             <version>${zoxweb-datastore.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.zoxweb</groupId>
+            <artifactId>h2p-datastore</artifactId>
+            <version>${zoxweb-datastore.version}</version>
+        </dependency>
+
 
     </dependencies>
 
