@@ -113,7 +113,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.xlogistx.nosneak.app.Main</mainClass> <!-- Specify your main class here -->
+                                    <mainClass>io.xlogistx.nosneak.app.NoSneakMain</mainClass> <!-- Specify your main class here -->
                                 </manifest>
                             </archive>
                         </configuration>
