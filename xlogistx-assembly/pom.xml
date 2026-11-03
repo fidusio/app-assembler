@@ -54,7 +54,7 @@
 
         <dependency>
             <groupId>io.xlogistx</groupId>
-            <artifactId>no-sneak-core</artifactId>
+            <artifactId>xlogistx-scan</artifactId>
             <version>${xlogistx.version}</version>
         </dependency>
 
